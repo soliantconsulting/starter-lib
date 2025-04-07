@@ -1,6 +1,6 @@
 {
   "name": "@soliantconsulting/starter-lib",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Support lib for Soliant Consulting starters",
   "type": "module",
   "author": "Soliant Consulting",
