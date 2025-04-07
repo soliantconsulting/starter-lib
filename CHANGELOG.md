@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/soliantconsulting/starter-lib/compare/v1.1.0...v1.2.0) (2025-04-07)
+
+
+### Features
+
+* **project:** add title property ([4dc067d](https://github.com/soliantconsulting/starter-lib/commit/4dc067d60d587dc07b5eafae6a8888cc8a2ff2ac))
+
 # [1.1.0](https://github.com/soliantconsulting/starter-lib/compare/v1.0.1...v1.1.0) (2025-04-07)
 
 
