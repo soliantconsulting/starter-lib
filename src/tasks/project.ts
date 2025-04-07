@@ -1,6 +1,7 @@
 import { mkdir, stat } from "node:fs/promises";
 import { join } from "node:path";
 import { ListrEnquirerPromptAdapter } from "@listr2/prompt-adapter-enquirer";
+import * as changeCase from "change-case";
 import type { ListrTask } from "listr2";
 import type { InputContext } from "../pipeline.js";
 import { execute } from "../util.js";
@@ -8,6 +9,7 @@ import { execute } from "../util.js";
 export type ProjectContext = {
     project: {
         name: string;
+        title: string;
         path: string;
     };
 };
@@ -42,6 +44,7 @@ export const createProjectTask = (): ListrTask<Partial<ProjectContext> & InputCo
 
         context.project = {
             name,
+            title: changeCase.capitalCase(name),
             path,
         };
     },

@@ -44,6 +44,7 @@
     "@aws-sdk/client-sts": "^3.782.0",
     "@listr2/prompt-adapter-enquirer": "^2.0.12",
     "@soliantconsulting/bitbucket-cloud-cli-auth": "^1.0.0",
+    "change-case": "^5.4.4",
     "enquirer": "^2.4.1",
     "execa": "^9.5.2",
     "liquidjs": "^10.21.0",
