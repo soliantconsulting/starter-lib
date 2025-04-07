@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/soliantconsulting/starter-lib/compare/v1.0.0...v1.0.1) (2025-04-07)
+
+
+### Bug Fixes
+
+* export pnpm-version task ([725f7a4](https://github.com/soliantconsulting/starter-lib/commit/725f7a4367d346ce4ca711bf4fd3683923b84a9f))
+
 # 1.0.0 (2025-04-07)
 
 
