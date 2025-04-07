@@ -52,25 +52,27 @@ const expandRecursive = async (
     await copyFile(sourcePath, destinationPath);
 };
 
-export type IgnoreListCreator = (context: unknown) => string[];
+export type IgnoreListCreator<TContext extends Partial<ProjectContext>> = (
+    context: TContext,
+) => string[];
 export type SynthHook = (
     context: ProjectContext,
     task: ListrTaskWrapper<ProjectContext, typeof ListrRenderer, typeof ListrRenderer>,
 ) => Promise<void> | void;
 
-export type SynthTaskOptions = {
+export type SynthTaskOptions<TContext extends Partial<ProjectContext>> = {
     postInstall?: SynthHook;
-    ignoreList?: IgnoreListCreator;
+    ignoreList?: IgnoreListCreator<TContext>;
 };
 
-export const createSynthTask = (
+export const createSynthTask = <TContext extends Partial<ProjectContext>>(
     sourcePath: string,
-    options?: SynthTaskOptions,
+    options?: SynthTaskOptions<TContext>,
 ): ListrTask<Partial<ProjectContext>> => ({
     title: "Synth project",
     task: async (context, task) => {
         const projectContext = requireContext(context, "project");
-        const ignoreGlobPaths = options?.ignoreList?.(context) ?? [];
+        const ignoreGlobPaths = options?.ignoreList?.(context as TContext) ?? [];
         const mustIgnore =
             ignoreGlobPaths.length === 0 ? () => false : compileWildcardMatch(ignoreGlobPaths);
 
