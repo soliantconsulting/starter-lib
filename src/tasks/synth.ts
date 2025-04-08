@@ -52,20 +52,18 @@ const expandRecursive = async (
     await copyFile(sourcePath, destinationPath);
 };
 
-export type IgnoreListCreator<TContext extends Partial<ProjectContext>> = (
+export type IgnoreListCreator<TContext extends ProjectContext> = (context: TContext) => string[];
+export type SynthHook<TContext extends ProjectContext> = (
     context: TContext,
-) => string[];
-export type SynthHook = (
-    context: ProjectContext,
-    task: ListrTaskWrapper<ProjectContext, typeof ListrRenderer, typeof ListrRenderer>,
+    task: ListrTaskWrapper<TContext, typeof ListrRenderer, typeof ListrRenderer>,
 ) => Promise<void> | void;
 
-export type SynthTaskOptions<TContext extends Partial<ProjectContext>> = {
-    postInstall?: SynthHook;
+export type SynthTaskOptions<TContext extends ProjectContext> = {
+    postInstall?: SynthHook<TContext>;
     ignoreList?: IgnoreListCreator<TContext>;
 };
 
-export const createSynthTask = <TContext extends Partial<ProjectContext>>(
+export const createSynthTask = <TContext extends ProjectContext>(
     sourcePath: string,
     options?: SynthTaskOptions<TContext>,
 ): ListrTask<Partial<ProjectContext>> => ({
@@ -89,8 +87,12 @@ export const createSynthTask = <TContext extends Partial<ProjectContext>>(
 
         await execute(task.stdout(), "pnpm", ["install"], { cwd: projectContext.path });
         await options?.postInstall?.(
-            context as ProjectContext,
-            task as ListrTaskWrapper<ProjectContext, typeof ListrRenderer, typeof ListrRenderer>,
+            context as TContext,
+            task as unknown as ListrTaskWrapper<
+                TContext,
+                typeof ListrRenderer,
+                typeof ListrRenderer
+            >,
         );
         await execute(task.stdout(), "pnpm", ["biome", "check", "--write"], {
             cwd: projectContext.path,
