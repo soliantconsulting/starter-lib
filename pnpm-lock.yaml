@@ -4,12 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@aws-cdk/cloud-assembly-schema': ^41.0.0
+
 importers:
 
   .:
     dependencies:
       '@aws-cdk/toolkit-lib':
-        specifier: 0.1.8
+        specifier: ^0.1.8
         version: 0.1.8
       '@aws-sdk/client-cloudformation':
         specifier: ^3.782.0
@@ -92,20 +95,6 @@ packages:
 
   '@aws-cdk/cloud-assembly-schema@41.2.0':
     resolution: {integrity: sha512-JaulVS6z9y5+u4jNmoWbHZRs9uGOnmn/ktXygNWKNu1k6lF3ad4so3s18eRu15XCbUIomxN9WPYT6Ehh7hzONw==}
-    engines: {node: '>= 14.15.0'}
-    bundledDependencies:
-      - jsonschema
-      - semver
-
-  '@aws-cdk/cloud-assembly-schema@42.0.0':
-    resolution: {integrity: sha512-oaWOcvLGP30mBW5fmCr5SamYD10mQztJ14KJaabh/lDdnCf1yje/rrVYtgnUlJMTZRqm52iTjgnp9oAyeyqhIA==}
-    engines: {node: '>= 14.15.0'}
-    bundledDependencies:
-      - jsonschema
-      - semver
-
-  '@aws-cdk/cloud-assembly-schema@43.0.0':
-    resolution: {integrity: sha512-6s+MPOp10aok/Fe6YT9MnAnCIs7a3i/rbRoExHJWi6HPOK4xzm03ucr3iaFdfb8J07hEFLa0ruTl9ulAq11L4A==}
     engines: {node: '>= 14.15.0'}
     bundledDependencies:
       - jsonschema
@@ -2181,10 +2170,6 @@ snapshots:
 
   '@aws-cdk/cloud-assembly-schema@41.2.0': {}
 
-  '@aws-cdk/cloud-assembly-schema@42.0.0': {}
-
-  '@aws-cdk/cloud-assembly-schema@43.0.0': {}
-
   '@aws-cdk/cloudformation-diff@2.180.0':
     dependencies:
       '@aws-cdk/aws-service-spec': 0.1.67
@@ -2195,13 +2180,9 @@ snapshots:
       string-width: 4.2.3
       table: 6.9.0
 
-  '@aws-cdk/cx-api@2.188.0(@aws-cdk/cloud-assembly-schema@42.0.0)':
+  '@aws-cdk/cx-api@2.188.0(@aws-cdk/cloud-assembly-schema@41.2.0)':
     dependencies:
-      '@aws-cdk/cloud-assembly-schema': 42.0.0
-
-  '@aws-cdk/cx-api@2.188.0(@aws-cdk/cloud-assembly-schema@43.0.0)':
-    dependencies:
-      '@aws-cdk/cloud-assembly-schema': 43.0.0
+      '@aws-cdk/cloud-assembly-schema': 41.2.0
 
   '@aws-cdk/region-info@2.188.0': {}
 
@@ -2215,9 +2196,9 @@ snapshots:
 
   '@aws-cdk/toolkit-lib@0.1.8':
     dependencies:
-      '@aws-cdk/cloud-assembly-schema': 43.0.0
+      '@aws-cdk/cloud-assembly-schema': 41.2.0
       '@aws-cdk/cloudformation-diff': 2.180.0
-      '@aws-cdk/cx-api': 2.188.0(@aws-cdk/cloud-assembly-schema@43.0.0)
+      '@aws-cdk/cx-api': 2.188.0(@aws-cdk/cloud-assembly-schema@41.2.0)
       '@aws-cdk/region-info': 2.188.0
       '@aws-sdk/client-appsync': 3.782.0
       '@aws-sdk/client-cloudcontrol': 3.782.0
@@ -4319,8 +4300,8 @@ snapshots:
 
   cdk-assets@3.2.0:
     dependencies:
-      '@aws-cdk/cloud-assembly-schema': 42.0.0
-      '@aws-cdk/cx-api': 2.188.0(@aws-cdk/cloud-assembly-schema@42.0.0)
+      '@aws-cdk/cloud-assembly-schema': 41.2.0
+      '@aws-cdk/cx-api': 2.188.0(@aws-cdk/cloud-assembly-schema@41.2.0)
       '@aws-sdk/client-ecr': 3.782.0
       '@aws-sdk/client-s3': 3.782.0
       '@aws-sdk/client-secrets-manager': 3.782.0
