@@ -1,5 +1,3 @@
 onlyBuiltDependencies:
   - '@biomejs/biome'
   - lefthook
-overrides:
-  '@aws-cdk/cloud-assembly-schema': '^41.0.0'
