@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/soliantconsulting/starter-lib/compare/v1.2.0...v1.2.1) (2025-04-08)
+
+
+### Bug Fixes
+
+* **synth:** use generic TContext for hooks ([7aa85a7](https://github.com/soliantconsulting/starter-lib/commit/7aa85a792bdccbd32ebeece8a7a168196157846a))
+
 # [1.2.0](https://github.com/soliantconsulting/starter-lib/compare/v1.1.0...v1.2.0) (2025-04-07)
 
 
