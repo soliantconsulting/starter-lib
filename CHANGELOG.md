@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/soliantconsulting/starter-lib/compare/v1.2.1...v1.2.2) (2025-04-08)
+
+
+### Bug Fixes
+
+* **pnpm-version:** use second task variable as task ([474a58d](https://github.com/soliantconsulting/starter-lib/commit/474a58db5ae44eb78ef8d32f59a2f627636248a4))
+
 ## [1.2.1](https://github.com/soliantconsulting/starter-lib/compare/v1.2.0...v1.2.1) (2025-04-08)
 
 
