@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/soliantconsulting/starter-lib/compare/v1.2.2...v1.2.3) (2025-04-08)
+
+
+### Bug Fixes
+
+* **git:** do not manually escape command arguments ([42fdca3](https://github.com/soliantconsulting/starter-lib/commit/42fdca30907acf6966b1a9b9f80389758065fb7d))
+
 ## [1.2.2](https://github.com/soliantconsulting/starter-lib/compare/v1.2.1...v1.2.2) (2025-04-08)
 
 
