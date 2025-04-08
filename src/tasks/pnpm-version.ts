@@ -2,9 +2,9 @@ import type { ListrTask } from "listr2";
 import semver from "semver/preload.js";
 import { type ExecuteResult, execute } from "../util.js";
 
-export const createPnpmVersionTask = (minVersion: string): ListrTask => ({
+export const createPnpmVersionTask = (minVersion: string): ListrTask<unknown> => ({
     title: "Check pnpm version",
-    task: async (task): Promise<void> => {
+    task: async (_context, task): Promise<void> => {
         let result: ExecuteResult;
 
         try {
