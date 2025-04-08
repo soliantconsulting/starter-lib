@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@aws-cdk/toolkit-lib':
-        specifier: ^0.1.8
+        specifier: 0.1.8
         version: 0.1.8
       '@aws-sdk/client-cloudformation':
         specifier: ^3.782.0
@@ -53,7 +53,7 @@ importers:
         version: 1.9.4
       '@commitlint/cli':
         specifier: ^19.8.0
-        version: 19.8.0(@types/node@22.14.0)(typescript@5.8.2)
+        version: 19.8.0(@types/node@22.14.0)(typescript@5.8.3)
       '@commitlint/config-conventional':
         specifier: ^19.8.0
         version: 19.8.0
@@ -70,19 +70,19 @@ importers:
         specifier: ^2.188.0
         version: 2.188.0(constructs@10.4.2)
       lefthook:
-        specifier: ^1.11.6
-        version: 1.11.6
+        specifier: ^1.11.8
+        version: 1.11.8
       typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
+        specifier: ^5.8.3
+        version: 5.8.3
       zod:
         specifier: ^3.24.2
         version: 3.24.2
 
 packages:
 
-  '@aws-cdk/asset-awscli-v1@2.2.230':
-    resolution: {integrity: sha512-kUnhKIYu42hqBa6a8x2/7o29ObpJgjYGQy28lZDq9awXyvpR62I2bRxrNKNR3uFUQz3ySuT9JXhGHhuZPdbnFw==}
+  '@aws-cdk/asset-awscli-v1@2.2.231':
+    resolution: {integrity: sha512-vPqD/K2pK/ALhU5r5Nafdc2nLB+LJKxNyxUmQnLsazU6AWDJfkqjHQx8m3J4Cjl2C3chQkIRMdzSDuXIlo43GA==}
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0':
     resolution: {integrity: sha512-7bY3J8GCVxLupn/kNmpPc5VJz8grx+4RKfnnJiO1LG+uxkZfANZG3RMHhE+qQxxwkyQ9/MfPtTpf748UhR425A==}
@@ -176,16 +176,16 @@ packages:
     resolution: {integrity: sha512-hUyMYWebb1HRCSK9jynWRQfNJoRhPaScvbePTPkNJybrVAo+7q2D5/nFP6burroRSWfYEaJXRNgr1besLjZZBA==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/client-codebuild@3.782.0':
-    resolution: {integrity: sha512-CGWw4FbTHJNyEFwcOLt++44kkueMOKbBg87M/AQbnT4xAWStGE7+P6VMKn4ZRHMeEJjlJCngu4HhPIbKeLrxdQ==}
+  '@aws-sdk/client-codebuild@3.784.0':
+    resolution: {integrity: sha512-gjLEedMoebYQW6y1iNoe2+f2/waboFtNZ3lj8qMcXPozXK1wSHmCm9BQ1xfiWu9u1oSmUkTXgEXGWRSABO5trQ==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/client-cognito-identity@3.782.0':
     resolution: {integrity: sha512-Zad5x3L5K+PuhdY2v8Q0tsafmVBa2SJJxNukPzXM1APxW7FpDVMxcdSzjfCfX7CvSpohR8zDIEROqMfoUisaTw==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/client-ec2@3.782.0':
-    resolution: {integrity: sha512-Js+bKKpPg01/wKosrfIk0PbySWpcGOaL8NS0iWFE5Nl7jyZ6Ax6q80bzFwdfhvf3eBKCHXFitYuC1SdKrm/MiQ==}
+  '@aws-sdk/client-ec2@3.783.0':
+    resolution: {integrity: sha512-bs3te6H9gR/12HGmd72Y7+v43W3Xnqtv2Ibj1JVO1bZEOHOpRd6+daw1Jczzd/Xv9VYhuQTUipTd2AwKo37t6w==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/client-ecr@3.782.0':
@@ -1525,66 +1525,66 @@ packages:
     resolution: {integrity: sha512-asOvN6bFlSnxewce2e/DK3p4tltyfC4VM7ZwuTuepI7dEQVcvpyFuBcEARu1+Hxg8DIwytce2n7jrZtRlPrARA==}
     engines: {node: '>= 10'}
 
-  koa@2.16.0:
-    resolution: {integrity: sha512-Afhqq0Vq3W7C+/rW6IqHVBDLzqObwZ07JaUNUEF8yCQ6afiyFE3RAy+i7V0E46XOWlH7vPWn/x0vsZwNy6PWxw==}
+  koa@2.16.1:
+    resolution: {integrity: sha512-umfX9d3iuSxTQP4pnzLOz0HKnPg0FaUUIKcye2lOiz3KPu1Y3M3xlz76dISdFPQs37P9eJz1wUpcTS6KDPn9fA==}
     engines: {node: ^4.8.4 || ^6.10.1 || ^7.10.1 || >= 8.1.4}
 
   lazystream@1.0.1:
     resolution: {integrity: sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==}
     engines: {node: '>= 0.6.3'}
 
-  lefthook-darwin-arm64@1.11.6:
-    resolution: {integrity: sha512-gWgdWrKgZgX+bKc6Vs/x7JkO+58lLOpRzpteLx//82D0MKVPlNZwjd4zz4AbIBXtM4Hcj+6gSsOzQ7QDXxjVvQ==}
+  lefthook-darwin-arm64@1.11.8:
+    resolution: {integrity: sha512-myew7k1hz00Uyrdh4a7gQkzlRDKALb4pHmh1GDH0ZMBoy3348qlN3HegAnvwcx2tlWSxqfwkBj+xmBS2c7ujAw==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@1.11.6:
-    resolution: {integrity: sha512-Ia0TjTKuYcSaDTuoCnbWtpPZ2VEoKzgn33OB90VjNaSVs4ooE0PIdpO+w00x1elqIaf1pbrpq6HgeB26Du8KbQ==}
+  lefthook-darwin-x64@1.11.8:
+    resolution: {integrity: sha512-hwwnY0jDMVDlEXDNCQIxx+sgYjSKJ2tx1LEbf7JsBv8icPMppY9UTKleRKzNv0qSaA5MKLciSWVAhi98/QzFJA==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@1.11.6:
-    resolution: {integrity: sha512-PxIwj+hmjLahyzEmcIfalIBDhgklAQCavwM4sGCgbzDi4/+VQX+4aEs4pQqtd7v3aohmjtO/4n2emzTI8donww==}
+  lefthook-freebsd-arm64@1.11.8:
+    resolution: {integrity: sha512-cllq5oqik463TwhR/3kU19gZv/MHzEl7bYIlmeXJGyS4VBZ2zbrcy5dYj0u58DkxOYjM3Jpi+0xS7FQwSOkRMg==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@1.11.6:
-    resolution: {integrity: sha512-3o1lMKxz1VtWaP/o117wgUn3ZOpefMoSf+8LuiTzI3/PDprIuzgyw2nXKlBZAMDpNPHMNnJeQNts9XLMRmkldg==}
+  lefthook-freebsd-x64@1.11.8:
+    resolution: {integrity: sha512-qGPo95rvzarOl7RUWcnVtkqKTYGpyFnJNnU47bvspeancENQcjzF2QLQnvfVfuTR6oR2rhHE/2z9aq//gxQJ+w==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@1.11.6:
-    resolution: {integrity: sha512-nKPFZ5cA9f5tVn0ybDVqcXXlpTHZqo05N4KQRhWTj5Nem+JoD2YzJIlvZhdJhUrldERqj6deDMXChH5T3z4Rrw==}
+  lefthook-linux-arm64@1.11.8:
+    resolution: {integrity: sha512-i5B5BQntVNg/7Glei36U2uCsVdUiJVmxna2eJalMW06t2cb84fsNKPUqQCiUb/mmbs8YaNgZTG/AKezsGP3RgQ==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@1.11.6:
-    resolution: {integrity: sha512-naN8dllLCOEeP+wznLnq+oXrs1dvt/iMLkcl+pOPWLqFccPfDiHzr8V8GslaTa+rSFsAnvjR7SJIOi5C29xedA==}
+  lefthook-linux-x64@1.11.8:
+    resolution: {integrity: sha512-B7zqxVc+9bQ6Bkdfu2TreJNoY6J2AFXIcm/JTD1NQMBHTkIbFysSQUKqiaCs9BHUCGuNOCTpuk7YHa9nlszRiA==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@1.11.6:
-    resolution: {integrity: sha512-dPxhJfYQ667T+U3pz1+O3mTRNHzXH/BvPlXSH+oy8uiSry4AtVNRXkVvXPUcpLlrAy6HuFYodsrpCIlWFeYwiQ==}
+  lefthook-openbsd-arm64@1.11.8:
+    resolution: {integrity: sha512-08kdSBxtcdTFRMIQwaziXGdG3RxrzH2QkRWeNAoUG7PpV5itIb5j+xnZqOeYM6eTLgf7QUle1xKcNwcWACuefw==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@1.11.6:
-    resolution: {integrity: sha512-9D26kcSsjiW4D0AuVDdi+0ZqrsOzRWOpMS/kcUbLfrU99yCvma0rMTqKbbDMkVur/znS7qL53oGahXCXDNA+IQ==}
+  lefthook-openbsd-x64@1.11.8:
+    resolution: {integrity: sha512-HlGr9t33BAnKZz9I11qRMijJpGg6/iMtb8ODIcStdM72FGgadqSLBHbNAJbD4dnN2wwR1PPu2POut/OYQfpGtg==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@1.11.6:
-    resolution: {integrity: sha512-xdCenr4+BFnfBEhiXj6GJp02EPmcwTAGa7NYm6hVTfDwGXw24tuLv7lpnGjgK3kovN6EukgLH1FYkeyDOBEMnA==}
+  lefthook-windows-arm64@1.11.8:
+    resolution: {integrity: sha512-iBgsUdLL3d6Ty5N3s4gCgxjIDviP7flBeVb6BUy5BbNzjW+OzljKx8DlzTAUmMnUJuo+a+svYYCjqwcNs1/nvA==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@1.11.6:
-    resolution: {integrity: sha512-Fg2GzLhzeDV/GX8+ydrI0wBOytQWpPkNdngx+a8B/feCDbwjAiFklDG5oV4ytuWrtg1JPEEWLJd6nHefj4wtHA==}
+  lefthook-windows-x64@1.11.8:
+    resolution: {integrity: sha512-nFFS6jB7PxHXJ7nIg59+507j1myFeX1Kq3ssqGI5uxK42nCcSKXBGnnEjUnq3WpbWM8b9Ly005jDb4LN0yIvVw==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@1.11.6:
-    resolution: {integrity: sha512-j0VmMM50WlPDassmgvapRum9po29Tv1BXzBNFpzGkk9E91CEG9jKik/OHyH/r/na+q8qNIUUyPL6QQuTN/UhQQ==}
+  lefthook@1.11.8:
+    resolution: {integrity: sha512-U+x49i83GWjRigejsiEnGMsH34SjUFtSGd4VuEUWDFzDc2uerzTx5oqFv0GMwCIXTxsecoPqop+e+1gop8DDXA==}
     hasBin: true
 
   lines-and-columns@1.2.4:
@@ -2053,8 +2053,8 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
 
-  typescript@5.8.2:
-    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
+  typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2170,7 +2170,7 @@ packages:
 
 snapshots:
 
-  '@aws-cdk/asset-awscli-v1@2.2.230': {}
+  '@aws-cdk/asset-awscli-v1@2.2.231': {}
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0': {}
 
@@ -2223,8 +2223,8 @@ snapshots:
       '@aws-sdk/client-cloudcontrol': 3.782.0
       '@aws-sdk/client-cloudformation': 3.782.0
       '@aws-sdk/client-cloudwatch-logs': 3.782.0
-      '@aws-sdk/client-codebuild': 3.782.0
-      '@aws-sdk/client-ec2': 3.782.0
+      '@aws-sdk/client-codebuild': 3.784.0
+      '@aws-sdk/client-ec2': 3.783.0
       '@aws-sdk/client-ecr': 3.782.0
       '@aws-sdk/client-ecs': 3.782.0
       '@aws-sdk/client-elastic-load-balancing-v2': 3.782.0
@@ -2508,7 +2508,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-codebuild@3.782.0':
+  '@aws-sdk/client-codebuild@3.784.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -2596,7 +2596,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-ec2@3.782.0':
+  '@aws-sdk/client-ec2@3.783.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -3684,11 +3684,11 @@ snapshots:
 
   '@cdklabs/tskb@0.0.3': {}
 
-  '@commitlint/cli@19.8.0(@types/node@22.14.0)(typescript@5.8.2)':
+  '@commitlint/cli@19.8.0(@types/node@22.14.0)(typescript@5.8.3)':
     dependencies:
       '@commitlint/format': 19.8.0
       '@commitlint/lint': 19.8.0
-      '@commitlint/load': 19.8.0(@types/node@22.14.0)(typescript@5.8.2)
+      '@commitlint/load': 19.8.0(@types/node@22.14.0)(typescript@5.8.3)
       '@commitlint/read': 19.8.0
       '@commitlint/types': 19.8.0
       tinyexec: 0.3.2
@@ -3735,15 +3735,15 @@ snapshots:
       '@commitlint/rules': 19.8.0
       '@commitlint/types': 19.8.0
 
-  '@commitlint/load@19.8.0(@types/node@22.14.0)(typescript@5.8.2)':
+  '@commitlint/load@19.8.0(@types/node@22.14.0)(typescript@5.8.3)':
     dependencies:
       '@commitlint/config-validator': 19.8.0
       '@commitlint/execute-rule': 19.8.0
       '@commitlint/resolve-extends': 19.8.0
       '@commitlint/types': 19.8.0
       chalk: 5.4.1
-      cosmiconfig: 9.0.0(typescript@5.8.2)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.14.0)(cosmiconfig@9.0.0(typescript@5.8.2))(typescript@5.8.2)
+      cosmiconfig: 9.0.0(typescript@5.8.3)
+      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.14.0)(cosmiconfig@9.0.0(typescript@5.8.3))(typescript@5.8.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -4151,7 +4151,7 @@ snapshots:
 
   '@soliantconsulting/bitbucket-cloud-cli-auth@1.0.0':
     dependencies:
-      koa: 2.16.0
+      koa: 2.16.1
       open: 10.1.0
     transitivePeerDependencies:
       - supports-color
@@ -4252,7 +4252,7 @@ snapshots:
 
   aws-cdk-lib@2.188.0(constructs@10.4.2):
     dependencies:
-      '@aws-cdk/asset-awscli-v1': 2.2.230
+      '@aws-cdk/asset-awscli-v1': 2.2.231
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.0
       '@aws-cdk/cloud-assembly-schema': 41.2.0
       constructs: 10.4.2
@@ -4437,21 +4437,21 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cosmiconfig-typescript-loader@6.1.0(@types/node@22.14.0)(cosmiconfig@9.0.0(typescript@5.8.2))(typescript@5.8.2):
+  cosmiconfig-typescript-loader@6.1.0(@types/node@22.14.0)(cosmiconfig@9.0.0(typescript@5.8.3))(typescript@5.8.3):
     dependencies:
       '@types/node': 22.14.0
-      cosmiconfig: 9.0.0(typescript@5.8.2)
+      cosmiconfig: 9.0.0(typescript@5.8.3)
       jiti: 2.4.2
-      typescript: 5.8.2
+      typescript: 5.8.3
 
-  cosmiconfig@9.0.0(typescript@5.8.2):
+  cosmiconfig@9.0.0(typescript@5.8.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.8.2
+      typescript: 5.8.3
 
   crc-32@1.2.2: {}
 
@@ -4884,7 +4884,7 @@ snapshots:
       co: 4.6.0
       koa-compose: 4.1.0
 
-  koa@2.16.0:
+  koa@2.16.1:
     dependencies:
       accepts: 1.3.8
       cache-content-type: 1.0.1
@@ -4916,48 +4916,48 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
-  lefthook-darwin-arm64@1.11.6:
+  lefthook-darwin-arm64@1.11.8:
     optional: true
 
-  lefthook-darwin-x64@1.11.6:
+  lefthook-darwin-x64@1.11.8:
     optional: true
 
-  lefthook-freebsd-arm64@1.11.6:
+  lefthook-freebsd-arm64@1.11.8:
     optional: true
 
-  lefthook-freebsd-x64@1.11.6:
+  lefthook-freebsd-x64@1.11.8:
     optional: true
 
-  lefthook-linux-arm64@1.11.6:
+  lefthook-linux-arm64@1.11.8:
     optional: true
 
-  lefthook-linux-x64@1.11.6:
+  lefthook-linux-x64@1.11.8:
     optional: true
 
-  lefthook-openbsd-arm64@1.11.6:
+  lefthook-openbsd-arm64@1.11.8:
     optional: true
 
-  lefthook-openbsd-x64@1.11.6:
+  lefthook-openbsd-x64@1.11.8:
     optional: true
 
-  lefthook-windows-arm64@1.11.6:
+  lefthook-windows-arm64@1.11.8:
     optional: true
 
-  lefthook-windows-x64@1.11.6:
+  lefthook-windows-x64@1.11.8:
     optional: true
 
-  lefthook@1.11.6:
+  lefthook@1.11.8:
     optionalDependencies:
-      lefthook-darwin-arm64: 1.11.6
-      lefthook-darwin-x64: 1.11.6
-      lefthook-freebsd-arm64: 1.11.6
-      lefthook-freebsd-x64: 1.11.6
-      lefthook-linux-arm64: 1.11.6
-      lefthook-linux-x64: 1.11.6
-      lefthook-openbsd-arm64: 1.11.6
-      lefthook-openbsd-x64: 1.11.6
-      lefthook-windows-arm64: 1.11.6
-      lefthook-windows-x64: 1.11.6
+      lefthook-darwin-arm64: 1.11.8
+      lefthook-darwin-x64: 1.11.8
+      lefthook-freebsd-arm64: 1.11.8
+      lefthook-freebsd-x64: 1.11.8
+      lefthook-linux-arm64: 1.11.8
+      lefthook-linux-x64: 1.11.8
+      lefthook-openbsd-arm64: 1.11.8
+      lefthook-openbsd-x64: 1.11.8
+      lefthook-windows-arm64: 1.11.8
+      lefthook-windows-x64: 1.11.8
 
   lines-and-columns@1.2.4: {}
 
@@ -5402,7 +5402,7 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  typescript@5.8.2: {}
+  typescript@5.8.3: {}
 
   undici-types@6.21.0: {}
 
