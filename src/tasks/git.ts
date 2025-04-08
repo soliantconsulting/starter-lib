@@ -42,7 +42,7 @@ export const createGitTask = (): ListrTask<
         }
 
         await execute(task.stdout(), "git", ["add", "."], { cwd: projectContext.path });
-        await execute(task.stdout(), "git", ["commit", "-m", '"feat: initial commit"'], {
+        await execute(task.stdout(), "git", ["commit", "-m", "feat: initial commit"], {
             cwd: projectContext.path,
         });
 
