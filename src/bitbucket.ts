@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 const BASE_URL = "https://api.bitbucket.org/2.0";
 
 type GetRepositoryResponse = {
@@ -17,6 +19,16 @@ export type Environment = {
     type: string;
     name: string;
 };
+
+const conflictErrorBodySchema = z.object({
+    error: z.object({
+        data: z.object({
+            arguments: z.object({
+                externalId: z.string(),
+            }),
+        }),
+    }),
+});
 
 export class BitBucketClient {
     public constructor(
@@ -106,12 +118,45 @@ export class BitBucketClient {
         );
 
         if (response.status === 409) {
-            // Already applied
-            return;
+            const parseResult = conflictErrorBodySchema.safeParse(await response.json());
+
+            if (!parseResult.success) {
+                throw new Error("Failed to parse conflict error");
+            }
+
+            return this.updateRepositoryVariable(
+                parseResult.data.error.data.arguments.externalId,
+                key,
+                value,
+                secured,
+            );
         }
 
         if (!response.ok) {
             throw new Error("Failed to create repository variable");
+        }
+    }
+
+    public async updateRepositoryVariable(
+        id: string,
+        key: string,
+        value: string,
+        secured: boolean,
+    ): Promise<void> {
+        const response = await fetch(
+            `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/pipelines_config/variables/${id}`,
+            {
+                method: "PUT",
+                headers: {
+                    authorization: `Bearer ${this.accessToken}`,
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({ key, value, secured }),
+            },
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to update repository variable");
         }
     }
 
@@ -134,12 +179,47 @@ export class BitBucketClient {
         );
 
         if (response.status === 409) {
-            // Already applied
-            return;
+            const parseResult = conflictErrorBodySchema.safeParse(await response.json());
+
+            if (!parseResult.success) {
+                throw new Error("Failed to parse conflict error");
+            }
+
+            return this.updateEnvVariable(
+                parseResult.data.error.data.arguments.externalId,
+                envUuid,
+                key,
+                value,
+                secured,
+            );
         }
 
         if (!response.ok) {
             throw new Error("Failed to create env variable");
+        }
+    }
+
+    public async updateEnvVariable(
+        id: string,
+        envUuid: string,
+        key: string,
+        value: string,
+        secured: boolean,
+    ): Promise<void> {
+        const response = await fetch(
+            `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/deployments_config/environments/${envUuid}/variables/${id}`,
+            {
+                method: "PUT",
+                headers: {
+                    authorization: `Bearer ${this.accessToken}`,
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({ key, value, secured }),
+            },
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to update env variable");
         }
     }
 }
