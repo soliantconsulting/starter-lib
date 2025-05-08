@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/soliantconsulting/starter-lib/compare/v1.2.3...v1.2.4) (2025-05-08)
+
+
+### Bug Fixes
+
+* deploy deploy-role-stack to us-east-1 unless specified otherwise ([a90f545](https://github.com/soliantconsulting/starter-lib/commit/a90f545ad78e8d81938636558310f9f05f5eca98))
+
 ## [1.2.3](https://github.com/soliantconsulting/starter-lib/compare/v1.2.2...v1.2.3) (2025-04-08)
 
 
