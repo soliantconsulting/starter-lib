@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/soliantconsulting/starter-lib/compare/v1.2.4...v1.2.5) (2025-05-08)
+
+
+### Bug Fixes
+
+* **bitbucket:** update variables when they already exist ([85e5cae](https://github.com/soliantconsulting/starter-lib/commit/85e5cae1a4330785ece9534fc70be7514736d7b6))
+
 ## [1.2.4](https://github.com/soliantconsulting/starter-lib/compare/v1.2.3...v1.2.4) (2025-05-08)
 
 
