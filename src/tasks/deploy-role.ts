@@ -1,3 +1,5 @@
+import { BootstrapEnvironments, Toolkit } from "@aws-cdk/toolkit-lib";
+import { ListrEnquirerPromptAdapter } from "@listr2/prompt-adapter-enquirer";
 import type { ListrTask } from "listr2";
 import { execute, requireContext } from "../util.js";
 import type { AwsEnvContext } from "./aws-env.js";
@@ -17,6 +19,7 @@ export const createDeployRoleTask = (): ListrTask<
     task: async (context, task): Promise<void> => {
         const awsEnvContext = requireContext(context, "awsEnv");
         const bitbucketContext = requireContext(context, "bitbucketRepository");
+        const prompt = task.prompt(ListrEnquirerPromptAdapter);
 
         if (awsEnvContext === null) {
             context.deployRole = null;
@@ -32,6 +35,21 @@ export const createDeployRoleTask = (): ListrTask<
 
         const projectContext = requireContext(context, "project");
 
+        const region = await prompt.run<string>({
+            type: "input",
+            message: "AWS deploy role region:",
+            footer: "Keep this as us-east-1 unless you deployed a previous deploy role in another region",
+            initial: "us-east-1",
+        });
+
+        if (region !== awsEnvContext.region) {
+            const cdk = new Toolkit();
+            await cdk.bootstrap(
+                BootstrapEnvironments.fromList([`aws://${awsEnvContext.accountId}/${region}`]),
+                {},
+            );
+        }
+
         await execute(
             task.stdout(),
             "pnpm",
@@ -45,7 +63,7 @@ export const createDeployRoleTask = (): ListrTask<
             ],
             {
                 env: {
-                    AWS_REGION: awsEnvContext.region,
+                    AWS_REGION: region,
                 },
             },
         );
@@ -62,7 +80,7 @@ export const createDeployRoleTask = (): ListrTask<
             ],
             {
                 env: {
-                    AWS_REGION: awsEnvContext.region,
+                    AWS_REGION: region,
                 },
             },
         );
