@@ -55,8 +55,8 @@ export const createAwsEnvTask = (
             initial: "us-east-1",
         });
 
-        const cdk = new Toolkit();
-        await cdk.bootstrap(
+        const toolkit = new Toolkit();
+        await toolkit.bootstrap(
             BootstrapEnvironments.fromList([`aws://${identity.Account}/${region}`]),
             {},
         );

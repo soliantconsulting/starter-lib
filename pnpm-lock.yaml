@@ -72,6 +72,9 @@ importers:
       aws-cdk-lib:
         specifier: ^2.195.0
         version: 2.195.0(constructs@10.4.2)
+      constructs:
+        specifier: ^10.4.2
+        version: 10.4.2
       lefthook:
         specifier: ^1.11.12
         version: 1.11.12
