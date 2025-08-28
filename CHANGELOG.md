@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/soliantconsulting/starter-lib/compare/v1.2.5...v1.3.0) (2025-08-28)
+
+
+### Features
+
+* use cdk toolkit instead of external bitbucket-openid-connect ([d7f5bf4](https://github.com/soliantconsulting/starter-lib/commit/d7f5bf42c006fd522cf5e2b362af9b7e915d802b))
+
 ## [1.2.5](https://github.com/soliantconsulting/starter-lib/compare/v1.2.4...v1.2.5) (2025-05-08)
 
 
