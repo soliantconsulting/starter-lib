@@ -41,7 +41,7 @@ export const createAwsEnvTask = (
 
         try {
             identity = await sts.getCallerIdentity({});
-        } catch (error) {
+        } catch {
             throw new Error("Could not acquire account ID, have you set up AWS env variables?");
         }
 

@@ -1,4 +1,4 @@
-import { Listr, ListrLogLevels, ListrLogger, type ListrTask } from "listr2";
+import { Listr, ListrLogger, ListrLogLevels, type ListrTask } from "listr2";
 import meow from "meow";
 
 export type PipelineConfig = {

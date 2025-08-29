@@ -43,7 +43,7 @@ export const createBitbucketRepositoryTask = (
         });
 
         const repositoryMatch = repositoryClonePrompt.match(
-            /@bitbucket\.org[:\/]([^\/]+)\/(.+)\.git/,
+            /@bitbucket\.org[:/]([^/]+)\/(.+)\.git/,
         );
 
         if (!repositoryMatch) {

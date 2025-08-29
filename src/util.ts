@@ -1,4 +1,4 @@
-import { type Options, type Result, execa } from "execa";
+import { execa, type Options, type Result } from "execa";
 
 export type ExecuteResult = Result<{ encoding: "utf8" }>;
 

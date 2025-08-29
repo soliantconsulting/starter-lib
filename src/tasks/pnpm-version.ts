@@ -17,8 +17,8 @@ export const createPnpmVersionTask = (minVersion: string): ListrTask<unknown> =>
 
         const version = result.stdout.trim();
 
-        if (!semver.gte(version, "10.0.0")) {
-            throw new Error(`pnpm version ${version} found, need at least 10.0.0`);
+        if (!semver.gte(version, minVersion)) {
+            throw new Error(`pnpm version ${version} found, need at least ${minVersion}`);
         }
     },
 });
