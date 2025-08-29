@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/soliantconsulting/starter-lib/compare/v1.3.0...v2.0.0) (2025-08-29)
+
+
+### Features
+
+* update to listr2 v9 ([fe70a48](https://github.com/soliantconsulting/starter-lib/commit/fe70a4856a75a1a1d2361619bc0ec33f326c45e6))
+
+
+### BREAKING CHANGES
+
+* if you use your own tasks, you need to also update to v9.
+
 # [1.3.0](https://github.com/soliantconsulting/starter-lib/compare/v1.2.5...v1.3.0) (2025-08-28)
 
 
