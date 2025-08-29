@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/soliantconsulting/starter-lib/compare/v2.0.0...v2.0.1) (2025-08-29)
+
+
+### Bug Fixes
+
+* **deploy-role:** set region on CloudFormation client ([2800c28](https://github.com/soliantconsulting/starter-lib/commit/2800c281ee8179fce330d7da81fff0544174da7f))
+
 # [2.0.0](https://github.com/soliantconsulting/starter-lib/compare/v1.3.0...v2.0.0) (2025-08-29)
 
 
