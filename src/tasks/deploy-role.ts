@@ -90,13 +90,13 @@ export const createDeployRoleTask = (): ListrTask<
             }),
         );
 
-        const deployRoleArn = await getDeployRoleArn(projectContext.name);
+        const deployRoleArn = await getDeployRoleArn(region, projectContext.name);
         context.deployRole = { arn: deployRoleArn };
     },
 });
 
-const getDeployRoleArn = async (repositoryName: string): Promise<string> => {
-    const cf = new CloudFormation();
+const getDeployRoleArn = async (region: string, repositoryName: string): Promise<string> => {
+    const cf = new CloudFormation({ region });
     const result = await cf.describeStacks({
         StackName: `bitbucket-openid-connect-role-${repositoryName}`,
     });
