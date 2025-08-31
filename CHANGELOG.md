@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/soliantconsulting/starter-lib/compare/v2.0.1...v2.0.2) (2025-08-31)
+
+
+### Bug Fixes
+
+* bump min listr2 version to 9.0.3 ([2a0ffea](https://github.com/soliantconsulting/starter-lib/commit/2a0ffeab2188383eb0bca2142e70bf3a53e491fe))
+
 ## [2.0.1](https://github.com/soliantconsulting/starter-lib/compare/v2.0.0...v2.0.1) (2025-08-29)
 
 
