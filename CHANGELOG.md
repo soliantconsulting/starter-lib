@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/soliantconsulting/starter-lib/compare/v2.0.2...v2.0.3) (2025-10-22)
+
+
+### Bug Fixes
+
+* add provenance attestation ([adee5f5](https://github.com/soliantconsulting/starter-lib/commit/adee5f542a7ccf874b3ae7e64aa4f4714991d18c))
+
 ## [2.0.2](https://github.com/soliantconsulting/starter-lib/compare/v2.0.1...v2.0.2) (2025-08-31)
 
 
