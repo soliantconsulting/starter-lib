@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/soliantconsulting/starter-lib/compare/v2.0.3...v2.1.0) (2025-11-28)
+
+
+### Features
+
+* **bitbucket:** introduce variables client to handle replace ([f9d95bc](https://github.com/soliantconsulting/starter-lib/commit/f9d95bcb22f2ec544eb790fbb9e6c1484c64f8c8))
+
 ## [2.0.3](https://github.com/soliantconsulting/starter-lib/compare/v2.0.2...v2.0.3) (2025-10-22)
 
 
