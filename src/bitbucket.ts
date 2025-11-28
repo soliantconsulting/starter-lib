@@ -20,16 +20,6 @@ export type Environment = {
     name: string;
 };
 
-const conflictErrorBodySchema = z.object({
-    error: z.object({
-        data: z.object({
-            arguments: z.object({
-                externalId: z.string(),
-            }),
-        }),
-    }),
-});
-
 export class BitBucketClient {
     public constructor(
         private readonly accessToken: string,
@@ -100,126 +90,138 @@ export class BitBucketClient {
         }));
     }
 
-    public async createRepositoryVariable(
+    /**
+     * Returns a BitBucketVariables instance for the given environment UUID.
+     *
+     * If no environment UUID is provided, the variables for the repository are returned.
+     */
+    public variables(envUuid: string | null = null): BitBucketVariables {
+        return new BitBucketVariables(this, envUuid);
+    }
+
+    /**
+     * @internal
+     */
+    public async createVariable(
+        envUuid: string | null,
         key: string,
         value: string,
         secured: boolean,
     ): Promise<void> {
-        const response = await fetch(
-            `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/pipelines_config/variables/`,
-            {
-                method: "POST",
-                headers: {
-                    authorization: `Bearer ${this.accessToken}`,
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify({ key, value, secured }),
+        const response = await fetch(this.getVariableBaseUrl(envUuid), {
+            method: "POST",
+            headers: {
+                authorization: `Bearer ${this.accessToken}`,
+                "content-type": "application/json",
             },
-        );
-
-        if (response.status === 409) {
-            const parseResult = conflictErrorBodySchema.safeParse(await response.json());
-
-            if (!parseResult.success) {
-                throw new Error("Failed to parse conflict error");
-            }
-
-            return this.updateRepositoryVariable(
-                parseResult.data.error.data.arguments.externalId,
-                key,
-                value,
-                secured,
-            );
-        }
+            body: JSON.stringify({ key, value, secured }),
+        });
 
         if (!response.ok) {
-            throw new Error("Failed to create repository variable");
+            throw new Error(`Failed to create ${key} variable`);
         }
     }
 
-    public async updateRepositoryVariable(
+    /**
+     * @internal
+     */
+    public async updateVariable(
+        envUuid: string | null,
         id: string,
         key: string,
         value: string,
         secured: boolean,
     ): Promise<void> {
-        const response = await fetch(
-            `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/pipelines_config/variables/${id}`,
-            {
-                method: "PUT",
-                headers: {
-                    authorization: `Bearer ${this.accessToken}`,
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify({ key, value, secured }),
+        const response = await fetch(`${this.getVariableBaseUrl(envUuid)}${id}`, {
+            method: "PUT",
+            headers: {
+                authorization: `Bearer ${this.accessToken}`,
+                "content-type": "application/json",
             },
-        );
+            body: JSON.stringify({ key, value, secured }),
+        });
 
         if (!response.ok) {
-            throw new Error("Failed to update repository variable");
+            throw new Error(`Failed to update ${key} variable`);
         }
     }
 
-    public async createEnvVariable(
-        envUuid: string,
-        key: string,
-        value: string,
-        secured: boolean,
-    ): Promise<void> {
-        const response = await fetch(
-            `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/deployments_config/environments/${envUuid}/variables/`,
-            {
-                method: "POST",
+    /**
+     * @internal
+     */
+    public async listVariables(envUuid: string | null): Promise<Variables> {
+        const variables: Variables = new Map();
+        let nextUrl: string | null = this.getVariableBaseUrl(envUuid);
+
+        while (nextUrl !== null) {
+            const response = await fetch(nextUrl, {
                 headers: {
                     authorization: `Bearer ${this.accessToken}`,
-                    "content-type": "application/json",
                 },
-                body: JSON.stringify({ key, value, secured }),
-            },
-        );
+            });
 
-        if (response.status === 409) {
-            const parseResult = conflictErrorBodySchema.safeParse(await response.json());
-
-            if (!parseResult.success) {
-                throw new Error("Failed to parse conflict error");
+            if (!response.ok) {
+                throw new Error("Failed to fetch repository variables");
             }
 
-            return this.updateEnvVariable(
-                parseResult.data.error.data.arguments.externalId,
-                envUuid,
-                key,
-                value,
-                secured,
-            );
+            const body = variablePageSchema.parse(await response.json());
+            nextUrl = body.next ?? null;
+
+            for (const variable of body.values) {
+                variables.set(variable.key, variable.uuid);
+            }
         }
 
-        if (!response.ok) {
-            throw new Error("Failed to create env variable");
+        return variables;
+    }
+
+    private getVariableBaseUrl(envUuid: string | null) {
+        return envUuid === null
+            ? `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/pipelines_config/variables/`
+            : `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/deployments_config/environments/${envUuid}/variables/`;
+    }
+}
+
+type Variables = Map<string, string>;
+
+const variablePageSchema = z.object({
+    values: z.array(
+        z.object({
+            uuid: z.string(),
+            key: z.string(),
+        }),
+    ),
+    next: z.url().optional(),
+});
+
+export class BitBucketVariables {
+    private readonly client: BitBucketClient;
+    private readonly envUuid: string | null;
+    private variables: Promise<Variables> | null = null;
+
+    public constructor(client: BitBucketClient, envUuid: string | null) {
+        this.client = client;
+        this.envUuid = envUuid;
+    }
+
+    public async replace(key: string, value: string, secured: boolean) {
+        const variables = await this.getVariables();
+        const uuid = variables.get(key);
+
+        if (uuid) {
+            await this.client.updateVariable(this.envUuid, uuid, key, value, secured);
+        } else {
+            await this.client.createVariable(this.envUuid, key, value, secured);
         }
     }
 
-    public async updateEnvVariable(
-        id: string,
-        envUuid: string,
-        key: string,
-        value: string,
-        secured: boolean,
-    ): Promise<void> {
-        const response = await fetch(
-            `${BASE_URL}/repositories/${this.workspace}/${this.repoSlug}/deployments_config/environments/${envUuid}/variables/${id}`,
-            {
-                method: "PUT",
-                headers: {
-                    authorization: `Bearer ${this.accessToken}`,
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify({ key, value, secured }),
-            },
-        );
-
-        if (!response.ok) {
-            throw new Error("Failed to update env variable");
+    private async getVariables(): Promise<Variables> {
+        if (this.variables) {
+            return this.variables;
         }
+
+        const promise = this.client.listVariables(this.envUuid);
+        this.variables = promise;
+        return promise;
     }
 }
