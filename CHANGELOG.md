@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/soliantconsulting/starter-lib/compare/v2.1.0...v2.1.1) (2026-03-06)
+
+
+### Bug Fixes
+
+* update deps to latest versions ([aa76541](https://github.com/soliantconsulting/starter-lib/commit/aa76541d0a9fbfc6bd3f8b06201fcbc81e173c88))
+
 # [2.1.0](https://github.com/soliantconsulting/starter-lib/compare/v2.0.3...v2.1.0) (2025-11-28)
 
 
