@@ -47,7 +47,7 @@
     "@aws-sdk/client-cloudformation": "^3.1003.0",
     "@aws-sdk/client-sts": "^3.1003.0",
     "@listr2/prompt-adapter-enquirer": "^3.0.5",
-    "@soliantconsulting/bitbucket-cloud-cli-auth": "^1.2.0",
+    "@soliantconsulting/bitbucket-cloud-cli-auth": "^2.0.0",
     "change-case": "^5.4.4",
     "enquirer": "^2.4.1",
     "execa": "^9.6.1",

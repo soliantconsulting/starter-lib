@@ -21,8 +21,8 @@ importers:
         specifier: ^3.0.5
         version: 3.0.5(enquirer@2.4.1)(listr2@9.0.5)
       '@soliantconsulting/bitbucket-cloud-cli-auth':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
@@ -799,8 +799,8 @@ packages:
     resolution: {integrity: sha512-O/IEdcCUKkubz60tFbGA7ceITTAJsty+lBjNoorP4Z6XRqaFb/OjQjZODophEcuq68nKm6/0r+6/lLQ+XVpk8g==}
     engines: {node: '>=18.0.0'}
 
-  '@soliantconsulting/bitbucket-cloud-cli-auth@1.2.0':
-    resolution: {integrity: sha512-nveDfZIDHUWwGnjjFin+Upd172rL83HJEL9rycXCXDQTpQY5IQ74GdiYHgJ0SvUXWOfy+1yyCBF2PiANaMGSLA==}
+  '@soliantconsulting/bitbucket-cloud-cli-auth@2.0.0':
+    resolution: {integrity: sha512-lJFc/2zWaGib71ib8xdEQMDE/YbDNZdunP2KZWAIYuVjGPxvUBoG9JGBVvh5aUpkaWiYvu4l97L/v+9TTBr+Nw==}
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -3899,7 +3899,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@soliantconsulting/bitbucket-cloud-cli-auth@1.2.0':
+  '@soliantconsulting/bitbucket-cloud-cli-auth@2.0.0':
     dependencies:
       '@taxum/core': 1.2.0
       open: 11.0.0

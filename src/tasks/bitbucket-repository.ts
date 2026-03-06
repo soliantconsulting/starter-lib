@@ -52,7 +52,11 @@ export const createBitbucketRepositoryTask = (
 
         const [, workspace, repository] = repositoryMatch;
 
-        const accessToken = await getAccessToken("knXh7CKqDtCUHLrhVW", 31337);
+        const accessToken = await getAccessToken(
+            "knXh7CKqDtCUHLrhVW",
+            "9aRYWA5EB8ZTXrL3qhLQBZbqSGne5wFS",
+            31337,
+        );
 
         const bitbucket = new BitBucketClient(accessToken, workspace, repository);
         const repositoryUuid = await bitbucket.getRepositoryUuid();
