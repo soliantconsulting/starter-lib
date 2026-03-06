@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/soliantconsulting/starter-lib/compare/v2.1.1...v2.2.0) (2026-03-06)
+
+
+### Features
+
+* update to @soliantconsulting/bitbucket-cloud-cli-auth v2 ([4016b33](https://github.com/soliantconsulting/starter-lib/commit/4016b33a165e962922a7044f5a4bb8c2f23bda72))
+
 ## [2.1.1](https://github.com/soliantconsulting/starter-lib/compare/v2.1.0...v2.1.1) (2026-03-06)
 
 
