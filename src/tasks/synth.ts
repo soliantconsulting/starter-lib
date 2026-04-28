@@ -78,6 +78,8 @@ export const createSynthTask = <TContext extends ProjectContext>(
             globals: context,
             strictFilters: true,
             strictVariables: true,
+            root: [".", sourcePath],
+            relativeReference: false,
         });
         await expandRecursive(sourcePath, projectContext.path, {
             basePath: sourcePath,
