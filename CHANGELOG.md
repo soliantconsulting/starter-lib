@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/soliantconsulting/starter-lib/compare/v2.2.0...v2.2.1) (2026-04-28)
+
+
+### Bug Fixes
+
+* add root and relativeReference due to changes in liquidjs ([4b5ac21](https://github.com/soliantconsulting/starter-lib/commit/4b5ac21a582b7734e7931c52d98499c5dddc5ec4))
+
 # [2.2.0](https://github.com/soliantconsulting/starter-lib/compare/v2.1.1...v2.2.0) (2026-03-06)
 
 
