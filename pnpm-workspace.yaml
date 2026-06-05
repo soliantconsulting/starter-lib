@@ -1,3 +1,4 @@
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - lefthook
+sideEffectsCache: false
+allowBuilds:
+  '@biomejs/biome': true
+  lefthook: true
