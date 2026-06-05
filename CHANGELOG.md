@@ -1,3 +1,16 @@
+# [2.3.0](https://github.com/soliantconsulting/starter-lib/compare/v2.2.1...v2.3.0) (2026-06-05)
+
+
+### Bug Fixes
+
+* update dependencies to latest versions ([d8644bd](https://github.com/soliantconsulting/starter-lib/commit/d8644bd01c5c4df166b8c25d461a4d447b21cc98))
+
+
+### Features
+
+* add task to verify node version ([96284ad](https://github.com/soliantconsulting/starter-lib/commit/96284adc11ea42bb8189a6f15dacbb0138e2877a))
+* pin packageManager in synthed projects to detected pnpm version ([51f1617](https://github.com/soliantconsulting/starter-lib/commit/51f1617558d63a1d53128abe92f7d3a26d744efb))
+
 ## [2.2.1](https://github.com/soliantconsulting/starter-lib/compare/v2.2.0...v2.2.1) (2026-04-28)
 
 
