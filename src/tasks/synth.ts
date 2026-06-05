@@ -88,6 +88,15 @@ export const createSynthTask = <TContext extends ProjectContext>(
         });
 
         await execute(task.stdout(), "pnpm", ["install"], { cwd: projectContext.path });
+
+        const pnpmVersion = (await execute(null, "pnpm", ["--version"])).stdout.trim();
+        await execute(
+            task.stdout(),
+            "pnpm",
+            ["dlx", "corepack@latest", "use", `pnpm@${pnpmVersion}`],
+            { cwd: projectContext.path },
+        );
+
         await options?.postInstall?.(
             context as TContext,
             task as unknown as ListrTaskWrapper<
