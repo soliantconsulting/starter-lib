@@ -5,4 +5,5 @@ export * from "./git.js";
 export * from "./node-version.js";
 export * from "./pnpm-version.js";
 export * from "./project.js";
+export * from "./sentry.js";
 export * from "./synth.js";

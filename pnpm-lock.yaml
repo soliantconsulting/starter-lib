@@ -41,6 +41,9 @@ importers:
       meow:
         specifier: ^14.1.0
         version: 14.1.0
+      open:
+        specifier: ^11.0.0
+        version: 11.0.0
       semver:
         specifier: ^7.8.2
         version: 7.8.2
@@ -1028,6 +1031,7 @@ packages:
   git-raw-commits@5.0.1:
     resolution: {integrity: sha512-Y+csSm2GD/PCSh6Isd/WiMjNAydu0VBiG9J7EdQsNA5P9uXvLayqjmTsNlK5Gs9IhblFZqOU0yid5Il5JPoLiQ==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   glob-parent@5.1.2:
