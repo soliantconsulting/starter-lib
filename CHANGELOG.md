@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/soliantconsulting/starter-lib/compare/v2.3.0...v2.4.0) (2026-07-30)
+
+
+### Features
+
+* add Sentry setup task using the setup-wizard login flow ([766daa4](https://github.com/soliantconsulting/starter-lib/commit/766daa448268dff2bdb7e859433097313759f1c5))
+
 # [2.3.0](https://github.com/soliantconsulting/starter-lib/compare/v2.2.1...v2.3.0) (2026-06-05)
 
 
