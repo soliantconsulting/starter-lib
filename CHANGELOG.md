@@ -1,3 +1,22 @@
+# [3.0.0](https://github.com/soliantconsulting/starter-lib/compare/v2.4.0...v3.0.0) (2026-08-03)
+
+
+### Bug Fixes
+
+* update dependencies to latest versions ([0cfa84d](https://github.com/soliantconsulting/starter-lib/commit/0cfa84d58c2e13a346b61eaaf1f468e3c6f145e3))
+
+
+### Features
+
+* move to listr2 11 and expose it as a peer dependency ([c69c369](https://github.com/soliantconsulting/starter-lib/commit/c69c369f76cab2dc4357b5b7273cd3bfb66c158d))
+
+
+### BREAKING CHANGES
+
+* listr2, @listr2/prompt-adapter-enquirer and enquirer
+are now peer dependencies and must be declared by consumers, with
+listr2 at ^11.0.0.
+
 # [2.4.0](https://github.com/soliantconsulting/starter-lib/compare/v2.3.0...v2.4.0) (2026-07-30)
 
 
